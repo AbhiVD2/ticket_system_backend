@@ -67,8 +67,8 @@ def delete_society(society_id):
 
 @app.route('/api/managers', methods=['GET'])
 def get_managers():
-    manager_list = [objectid_to_str(manager) for manager in managers.find()]
-    return jsonify(manager_list)
+    managers1 = [objectid_to_str(manager) for manager in managers.find()]
+    return jsonify(managers1)
 
 @app.route('/api/managers', methods=['POST'])
 def add_manager():
