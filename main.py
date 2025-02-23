@@ -48,13 +48,13 @@ def add_society():
 @app.route('/api/societies/<society_id>', methods=['PUT'])
 def update_society(society_id):
     data = request.json
-    updated_data = {
-        "name": data.get('name'),
-        "address": data.get('address'),
-        "incharge": data.get('incharge'),
-        "contact": data.get('contact')
-    }
-    societyData.update_one({'_id': ObjectId(society_id)}, {'$set': updated_data})
+    # updated_data = {
+    #     "name": data.get('name'),
+    #     "address": data.get('address'),
+    #     "incharge": data.get('incharge'),
+    #     "contact": data.get('contact')
+    # }
+    societyData.update_one({'_id': ObjectId(society_id)}, {'$set': data})
     return jsonify({"message": "Society updated successfully"})
 
 @app.route('/api/societies/<society_id>', methods=['DELETE'])
